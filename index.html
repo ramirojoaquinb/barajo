@@ -1,148 +1,313 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barajo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alquimia Villa Bosch · Pilates Reformer | Reservá por WhatsApp</title>
+<meta name="description" content="Alquimia Entrenamiento consciente en Villa Bosch – Santos Vega 6290. Pilates reformer, stretching, yoga, funcional, columpios y GAP. Lun a Vie 8–12 / 14–21, Sáb 9–13. Reservá por WhatsApp.">
+<meta name="theme-color" content="#F5F4EF">
+<link rel="icon" href="alquimia.png">
+<meta property="og:title" content="Alquimia Villa Bosch – Reservá tu clase">
+<meta property="og:description" content="Pilates reformer en Villa Bosch. Turnos fijos o rotativos. Reservá por WhatsApp o en Alquimia.luweva.online">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Alquimia – Entrenamiento consciente · Villa Bosch",
+  "telephone": "+54 9 11 6720-0066",
+  "address": { "@type": "PostalAddress", "streetAddress": "Santos Vega 6290", "addressLocality": "Villa Bosch, Buenos Aires", "addressCountry": "AR" },
+  "openingHours": ["Mo-Fr 08:00-12:00", "Mo-Fr 14:00-21:00", "Sa 09:00-13:00"],
+  "priceRange": "$$",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "257" }
+}
+</script>
 <style>
   :root {
-    --bg: #F2F4EF;
-    --card: #FFFFFF;
-    --border: #E3E1D6;
-    --border-hover: #C8C5B8;
-    --ink: #1E2321;
-    --ink-soft: #5B5F58;
-    --gold: #A8710C;
-    --gold-bg: #F4E8D2;
-    --plum: #7B3B58;
-    --plum-bg: #F1DEE7;
-    --green: #1F6E4A;
-    --green-bg: #DCEEE3;
+    --bg: #F5F4EF; --bg-soft: #EDEBE1; --card: #FFFFFF;
+    --ink: #22261F; --ink-soft: #5C6357; --muted: #837C70;
+    --accent: #4A5D46; --accent-dark: #3A4A37; --accent-soft: #DCE3D6; --accent-ghost: #EEF2E9;
+    --gold: #B98A2F; --border: #E2DED2; --danger: #B6544A;
+    --radius: 16px; --shadow: 0 1px 2px rgba(34,38,31,.05), 0 10px 30px -14px rgba(74,93,70,.25);
+    --max: 980px;
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-  }
-  main { width: 100%; max-width: 380px; }
-  .header { text-align: center; margin-bottom: 32px; }
-  .avatar {
-    display: block;
-    width: 84px;
-    height: 84px;
-    margin: 0 auto 16px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--border);
-    background: var(--card);
-  }
-  .header h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1.2;
-    margin: 0 0 8px;
-    letter-spacing: -0.01em;
-  }
-  .header p { margin: 0; color: var(--ink-soft); font-size: 15px; }
-  .links { display: flex; flex-direction: column; gap: 12px; }
-  .link-btn {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 16px 18px;
-    text-decoration: none;
-    color: var(--ink);
-    transition: border-color .15s ease, transform .15s ease;
-  }
-  .link-btn:hover { border-color: var(--border-hover); transform: translateY(-1px); }
-  .link-btn:active { transform: translateY(0); }
-  .link-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-  .icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .icon svg { width: 20px; height: 20px; }
-  .icon.gold { background: var(--gold-bg); color: var(--gold); }
-  .icon.plum { background: var(--plum-bg); color: var(--plum); }
-  .icon.green { background: var(--green-bg); color: var(--green); }
-  .label { flex: 1; font-size: 15px; font-weight: 500; }
-  .chevron { color: #B7B4A8; flex-shrink: 0; }
-  footer { text-align: center; margin-top: 28px; font-size: 12px; color: #9B988C; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; color: var(--ink); font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(700px 320px at 15% 0%, #E7EBDD 0%, transparent 60%), radial-gradient(700px 340px at 90% 4%, #F0E7D2 0%, transparent 55%), var(--bg);
+    display: flex; justify-content: center; padding: 0 16px 96px; line-height: 1.55; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: #fff; padding: 8px 12px; z-index: 99; border-radius: 0 0 10px 0; }
+  .skip:focus { left: 0; }
+  .wrap { width: 100%; max-width: var(--max); }
+  .hero { text-align: center; padding: 40px 8px 18px; }
+  .logo-img { width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: var(--shadow); background: #fff; }
+  .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+  .pill { font-size: .78rem; font-weight: 600; border: 1px solid var(--border); background: rgba(255,255,255,.75); color: var(--ink-soft); border-radius: 999px; padding: 5px 13px; }
+  .pill.star { color: var(--gold); border-color: #E5D3A8; }
+  .pill.open { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2rem, 5vw, 2.9rem); margin: 0 0 4px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .tag { color: var(--ink-soft); margin: 0 0 8px; font-size: 1.03rem; }
+  .hero-meta { color: var(--muted); font-size: .88rem; display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+  .hero-meta b { color: var(--ink); }
+  .grid { display: grid; gap: 18px; margin-top: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 880px) { .grid { grid-template-columns: 1.05fr .95fr; align-items: start; } .sticky { position: sticky; top: 16px; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .card.accent-card { background: linear-gradient(160deg, var(--accent) 0%, var(--accent-dark) 100%); border-color: var(--accent-dark); color: #fff; }
+  .card.accent-card h2 { color: #fff; } .card.accent-card .sub { color: #D8E0D2; }
+  .card h2 { font-family: 'Fraunces', serif; font-size: 1.28rem; margin: 0 0 4px; font-weight: 600; }
+  .sub { color: var(--muted); font-size: .87rem; margin: 0 0 14px; }
+  .kicker { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .accent-card .kicker { color: #E4EBDD; }
+  .clases { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 4px; }
+  .clases button { border: 1.5px solid var(--border); background: #fff; color: var(--ink); border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 500; padding: 8px 15px; cursor: pointer; }
+  .accent-card .clases button { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.12); color: #fff; }
+  .clases button.selected { background: #fff; border-color: #fff; color: var(--accent-dark); font-weight: 700; }
+  label { display: block; font-size: .83rem; margin: 14px 0 5px; font-weight: 500; }
+  .accent-card label { color: #D8E0D2; } .light-inputs label { color: var(--ink-soft); }
+  input, select { width: 100%; border-radius: 10px; font: inherit; font-size: 1rem; padding: 11px 12px; }
+  .accent-card input, .accent-card select { background: rgba(255,255,255,.95); border: 1.5px solid rgba(255,255,255,.35); color: var(--ink); }
+  .light-inputs input, .light-inputs select { background: var(--bg); border: 1.5px solid var(--border); color: var(--ink); }
+  input:focus-visible, select:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .err-msg { display: none; color: #F0A49B; font-size: .8rem; margin-top: 4px; }
+  .invalid { border-color: #E08A7E !important; } .invalid + .err-msg { display: block; }
+  button.cta { width: 100%; margin-top: 18px; background: #fff; color: var(--accent-dark); border: none; border-radius: 12px; font-weight: 700; font-size: 1.02rem; padding: 15px; cursor: pointer; box-shadow: 0 8px 20px -8px rgba(0,0,0,.4); }
+  button.cta:hover { transform: translateY(-1px); } button.cta:disabled { opacity: .7; cursor: wait; transform: none; }
+  .fine { font-size: .78rem; color: #D8E0D2; margin: 10px 0 0; text-align: center; }
+  #resumen { display: none; margin-top: 14px; background: rgba(255,255,255,.12); border: 1px dashed rgba(255,255,255,.45); border-radius: 10px; padding: 12px; font-size: .9rem; }
+  .lista { list-style: none; padding: 0; margin: 0; }
+  .horarios li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); padding: 10px 0; color: var(--muted); font-size: .93rem; }
+  .horarios li:last-child { border-bottom: 0; } .horarios li span:last-child { color: var(--ink); text-align: right; font-weight: 500; }
+  .plan { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid var(--border); border-radius: 12px; padding: 13px 15px; margin-bottom: 10px; background: #FCFBF7; }
+  .plan:hover { border-color: var(--accent); }
+  .plan.destacado { border: 1.5px solid var(--accent); background: var(--accent-ghost); position: relative; }
+  .plan .tag-top { position: absolute; top: -10px; left: 14px; background: var(--accent); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 2px 10px; }
+  .plan .nombre { font-weight: 600; font-size: .95rem; } .plan .detalle { display: block; font-size: .8rem; color: var(--muted); font-weight: 400; }
+  .plan .precio { color: var(--accent); font-weight: 700; white-space: nowrap; }
+  .plan button.mini { border: 1.5px solid var(--accent); background: transparent; color: var(--accent); border-radius: 999px; font: inherit; font-size: .8rem; font-weight: 600; padding: 7px 14px; cursor: pointer; white-space: nowrap; }
+  .plan button.mini:hover { background: var(--accent); color: #fff; }
+  .addr { font-size: .9rem; color: var(--ink-soft); margin: 0 0 12px; } .addr b { color: var(--ink); }
+  .links { display: grid; gap: 10px; }
+  .links a { display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; color: var(--ink); border: 1px solid var(--border); border-radius: 12px; padding: 13px; font-size: .93rem; font-weight: 500; background: #fff; }
+  .links a:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .links a.primary { background: var(--ink); color: #fff; border-color: var(--ink); font-weight: 600; }
+  .nota { font-size: .82rem; color: var(--muted); background: var(--bg); border: 1px dashed var(--border); border-radius: 10px; padding: 10px 12px; margin-top: 12px; }
+  footer { text-align: center; color: var(--muted); font-size: .75rem; margin-top: 26px; }
+  .wa-float { position: fixed; right: 16px; bottom: 16px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(0,0,0,.3); text-decoration: none; font-size: 28px; }
+  @media (prefers-reduced-motion: no-preference) { .wrap { animation: fade .45s ease-out; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
-<main>
-
-  <div class="header">
-    <img class="avatar" src="barajo.png" alt="Foto del negocio">
-
-    <h1>Barajo</h1>
-    <p>Elegí una opción</p>
+<a class="skip" href="#reserva">Saltar a reservar</a>
+<div class="wrap">
+  <header class="hero">
+    <img class="logo-img" src="alquimia.png" alt="Alquimia Entrenamiento consciente">
+    <div class="badges">
+      <span class="pill" id="estadoAbierto" role="status">● comprobando horario…</span>
+      <span class="pill star">★ 4.9 · 257 reseñas</span>
+      <span class="pill">Sede Villa Bosch · Reformer</span>
+    </div>
+    <h1>Alquimia <em>Entrenamiento consciente</em></h1>
+    <p class="tag">Pilates · Stretching · Yoga · Funcional · Columpios · GAP 💫</p>
+    <div class="hero-meta"><span>📍 <b>Santos Vega 6290, Villa Bosch</b></span><span>·</span><span>🕒 Lun a Vie <b>8–12 / 14–21</b> · Sáb <b>9–13</b></span></div>
+  </header>
+  <div class="grid">
+    <div style="display:grid;gap:18px">
+      <section class="card light-inputs" aria-labelledby="t-turnos">
+        <span class="kicker">Turnos online</span>
+        <h2 id="t-turnos">Reservá tus clases</h2>
+        <p class="sub">Elegí packs con días y horarios fijos o rotativos. Podés combinar días, hs, actividades y ambas sucursales.</p>
+        <div class="links">
+          <a class="primary" href="https://alquimia.luweva.online" target="_blank" rel="noopener">📅 Abrir turnos online · alquimia.luweva.online</a>
+        </div>
+        <div class="nota">💡 Si es tu primera vez, escribinos por WhatsApp y te ayudamos a elegir pack y horarios.</div>
+      </section>
+      <section class="card horarios" aria-labelledby="t-hor">
+        <span class="kicker">Grilla semanal</span>
+        <h2 id="t-hor">Horarios</h2>
+        <p class="sub">Te confirmamos por WhatsApp en el día.</p>
+        <ul class="lista" id="listaHorarios">
+          <li><span>Lunes a Viernes</span><span>8:00–12:00 / 14:00–21:00</span></li>
+          <li><span>Sábados</span><span>9:00–13:00</span></li>
+        </ul>
+      </section>
+      <section class="card" aria-labelledby="t-planes">
+        <span class="kicker">Valores Sep · Oct · Nov — se actualizan aprox. cada 3 meses</span>
+        <h2 id="t-planes">Packs de clases</h2>
+        <p class="sub">Tocá un pack para consultarlo directo por WhatsApp.</p>
+        <div id="listaPlanes"></div>
+      </section>
+      <section class="card light-inputs" aria-labelledby="t-ubi">
+        <span class="kicker">Cómo llegar — Villa Bosch</span>
+        <h2 id="t-ubi">La sede</h2>
+        <p class="addr"><b>Santos Vega 6290, Villa Bosch, Buenos Aires</b><br><span>En esta sede: Pilates reformer.</span><br><span>Otra sede: Marco Polo 4787, Caseros — Pilates studio, funcional y GAP, stretching, yoga y columpios. Podés combinar ambas.</span></p>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Santos+Vega+6290+Villa+Bosch" target="_blank" rel="noopener">📍 Cómo llegar en Maps</a>
+          <a href="https://share.google/948zw4PqHBcuCam0x" target="_blank" rel="noopener">🗺️ Ver ficha en Google</a>
+        </div>
+      </section>
+      <section class="card light-inputs" aria-labelledby="t-links">
+        <span class="kicker">Comunidad</span>
+        <h2 id="t-links">Reseñas y redes</h2>
+        <p class="sub">4.9 ★ con 257 reseñas. Sumate 💫</p>
+        <div class="links">
+          <a href="https://search.google.com/local/writereview?placeid=ChIJK7kiWQC5vJUR8qbadpoZFVE" target="_blank" rel="noopener">⭐ Dejar una reseña en Google — Bosch</a>
+          <a href="https://instagram.com/alquimia.ps" target="_blank" rel="noopener">📸 Instagram @alquimia.ps</a>
+          <a href="tel:+5491167200066">📞 Llamar al 11 6720-0066</a>
+        </div>
+      </section>
+    </div>
+    <main>
+      <section class="card accent-card sticky" id="reserva" aria-labelledby="t-res">
+        <span class="kicker">Primera consulta</span>
+        <h2 id="t-res">Quiero empezar</h2>
+        <p class="sub">Contanos qué buscás e intentaremos comunicarnos lo antes posible. Esperamos coincidir 💫</p>
+        <form id="reservaForm" novalidate>
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej: María Pérez" required minlength="2" maxlength="80">
+          <span class="err-msg">Contanos tu nombre (mín. 2 letras).</span>
+          <label for="celu">Tu celu</label>
+          <input type="tel" id="celu" name="celu" autocomplete="tel" inputmode="tel" placeholder="Ej: 11 1234-5678">
+          <label id="lbl-clase">Actividad que te interesa</label>
+          <div class="clases" id="clases" role="group" aria-labelledby="lbl-clase"></div>
+          <div class="row2">
+            <div>
+              <label for="turno">Días / turno</label>
+              <select id="turno" name="turno">
+                <option value="Mañana Lun a Vie (8–12)">Mañana Lun a Vie (8–12)</option>
+                <option value="Tarde Lun a Vie (14–21)">Tarde Lun a Vie (14–21)</option>
+                <option value="Sábado (9–13)">Sábado (9–13)</option>
+                <option value="Rotativo / a combinar">Rotativo / a combinar</option>
+              </select>
+            </div>
+            <div>
+              <label for="plan">Pack de interés</label>
+              <select id="plan" name="plan"></select>
+            </div>
+          </div>
+          <div id="resumen" aria-live="polite"></div>
+          <button class="cta" type="submit" id="btnReservar">Consultar por WhatsApp</button>
+          <p class="fine">Se abre WhatsApp con el mensaje ya armado al 11 6720-0066. Sin compromiso.</p>
+        </form>
+      </section>
+    </main>
   </div>
-
-  <div class="links">
-
-    <a class="link-btn" href="https://search.google.com/local/writereview?placeid=ChIJHTTcHTK4vJURvzDXXVlhG9c" target="_blank" rel="noopener">
-      <span class="icon gold" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="label">Dejanos una reseña en Google</span>
-      <span class="chevron" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-      </span>
-    </a>
-
-    <a class="link-btn" href="https://instagram.com/rbj.barajo" target="_blank" rel="noopener">
-      <span class="icon plum" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-        </svg>
-      </span>
-      <span class="label">Seguinos en Instagram</span>
-      <span class="chevron" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-      </span>
-    </a>
-
-    <a class="link-btn" href="https://wa.me/5491144102657" target="_blank" rel="noopener">
-      <span class="icon green" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-        </svg>
-      </span>
-      <span class="label">Escribinos por WhatsApp</span>
-      <span class="chevron" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-      </span>
-    </a>
-
-  </div>
-
-  <footer>Tocá o escaneá cuando quieras</footer>
-
-</main>
+  <footer>Alquimia · Entrenamiento consciente · Villa Bosch — Santos Vega 6290 · Caseros — Marco Polo 4787</footer>
+</div>
+<a class="wa-float" id="waFloat" href="https://wa.me/5491167200066?text=Hola%20Alquimia!%20Quiero%20info%20para%20empezar%20en%20Villa%20Bosch." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">💬</a>
+<noscript><p style="text-align:center">Para anotarte escribinos por WhatsApp al +54 9 11 6720-0066.</p></noscript>
+<script>
+'use strict';
+const CONFIG = {
+  nombreNegocio: "Alquimia",
+  sede: "Villa Bosch",
+  whatsappNumero: "5491167200066",
+  clases: ["Pilates reformer","Pilates studio","Funcional","GAP","Stretching","Yoga","Columpios"],
+  planes: [
+    { nombre: "4 clases", detalle: "Ideal para arrancar · mensual", precio: "$55.000" },
+    { nombre: "8 clases", detalle: "2 veces por semana", precio: "$67.000", destacado: true },
+    { nombre: "12 clases", detalle: "3 veces por semana", precio: "$77.000" },
+    { nombre: "Pack 13 a 24 clases", detalle: "Intensivo / rotativo", precio: "$88.000" }
+  ]
+};
+const $ = (id) => document.getElementById(id);
+/* Planes */
+const boxP = $('listaPlanes'); const selPlan = $('plan');
+boxP.textContent = ''; selPlan.textContent = '';
+let planElegido = CONFIG.planes[1].nombre;
+CONFIG.planes.forEach(p => {
+  const div = document.createElement('div');
+  div.className = 'plan' + (p.destacado ? ' destacado' : '');
+  const left = document.createElement('div');
+  const nm = document.createElement('div'); nm.className = 'nombre'; nm.textContent = p.nombre;
+  const dt = document.createElement('span'); dt.className = 'detalle'; dt.textContent = p.detalle;
+  nm.append(dt); left.append(nm);
+  const pr = document.createElement('div'); pr.className = 'precio'; pr.textContent = p.precio;
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'mini'; btn.textContent = 'Elegir';
+  btn.setAttribute('aria-label', 'Consultar por ' + p.nombre);
+  btn.addEventListener('click', () => {
+    planElegido = p.nombre; selPlan.value = p.nombre;
+    actualizaResumen();
+    $('reserva').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    $('nombre').focus({ preventScroll: true });
+  });
+  if (p.destacado) { const tag = document.createElement('span'); tag.className = 'tag-top'; tag.textContent = 'Más elegido'; div.append(tag); }
+  div.append(left, pr, btn); boxP.append(div);
+  const opt = document.createElement('option'); opt.value = p.nombre; opt.textContent = p.nombre + ' · ' + p.precio;
+  selPlan.append(opt);
+});
+selPlan.value = planElegido;
+selPlan.addEventListener('change', () => { planElegido = selPlan.value; actualizaResumen(); });
+/* Clases pills */
+let claseSel = CONFIG.clases[0];
+const boxC = $('clases');
+CONFIG.clases.forEach((c, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = c;
+  b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+  if (i === 0) b.classList.add('selected');
+  b.addEventListener('click', () => {
+    claseSel = c;
+    [...boxC.children].forEach(x => { x.classList.remove('selected'); x.setAttribute('aria-pressed', 'false'); });
+    b.classList.add('selected'); b.setAttribute('aria-pressed', 'true');
+    actualizaResumen();
+  });
+  boxC.append(b);
+});
+/* Abierto: Lun-Vie 8-12 / 14-21, Sab 9-13 */
+function estaAbierto(d = new Date()) {
+  const dia = d.getDay(), h = d.getHours() + d.getMinutes() / 60;
+  if (dia === 0) return false;
+  if (dia === 6) return h >= 9 && h < 13;
+  return (h >= 8 && h < 12) || (h >= 14 && h < 21);
+}
+function pintaEstado() {
+  const el = $('estadoAbierto');
+  const ok = estaAbierto();
+  el.textContent = ok ? '● Abierto ahora' : '● Cerrado ahora';
+  el.classList.toggle('open', ok);
+}
+pintaEstado(); setInterval(pintaEstado, 60000);
+try {
+  const last = JSON.parse(localStorage.getItem('alquimia-bosch') || '{}');
+  if (last.nombre) $('nombre').value = last.nombre;
+  if (last.turno) $('turno').value = last.turno;
+  if (last.celu) $('celu').value = last.celu;
+} catch {}
+function actualizaResumen() {
+  const box = $('resumen');
+  const n = $('nombre').value.trim();
+  if (!n) { box.style.display = 'none'; return; }
+  box.style.display = 'block'; box.textContent = '';
+  box.append('Consulta: ');
+  const b = document.createElement('b');
+  b.textContent = claseSel + ' · ' + $('turno').value + ' · ' + planElegido + ' · ' + n;
+  box.append(b);
+}
+['nombre','turno','celu'].forEach(id => $(id).addEventListener('input', actualizaResumen));
+$('reservaForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const nom = $('nombre');
+  const ok = nom.value.trim().length >= 2;
+  nom.classList.toggle('invalid', !ok);
+  if (!ok) { nom.focus(); return; }
+  const btn = $('btnReservar');
+  btn.disabled = true; btn.textContent = 'Abriendo WhatsApp…';
+  try { localStorage.setItem('alquimia-bosch', JSON.stringify({ nombre: nom.value.trim(), turno: $('turno').value, celu: $('celu').value.trim() })); } catch {}
+  const celu = $('celu').value.trim();
+  let mensaje = 'Hola Alquimia! Soy ' + nom.value.trim() + ' (sede Villa Bosch).';
+  if (celu) mensaje += ' Mi celu es ' + celu + '.';
+  mensaje += ' Me interesa ' + claseSel + ' en turno ' + $('turno').value + '. Pack: ' + planElegido + '. Vi los turnos en alquimia.luweva.online. Gracias! 💫';
+  window.open('https://wa.me/' + CONFIG.whatsappNumero + '?text=' + encodeURIComponent(mensaje), '_blank', 'noopener');
+  setTimeout(() => { btn.disabled = false; btn.textContent = 'Consultar por WhatsApp'; }, 1500);
+});
+</script>
 </body>
 </html>
